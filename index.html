@@ -20,7 +20,9 @@
   <link rel="canonical" href="https://www.tattoomusicfest.mx/">
   <link rel="stylesheet" href="/css/styles.css">
   <script src="/js/main.js" defer></script>
+  <link rel="preconnect" href="https://alzadastreetwear.com">
   <script src="/js/newsletter.js" defer></script>
+  <script src="/js/merch.js" defer></script>
 </head>
 <body>
   <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -38,6 +40,21 @@
           <a class="boton" href="#lista">Avísame</a>
           <a class="boton boton-secundario" href="https://instagram.com/tattoomusicfestmx" target="_blank" rel="noopener">Síguenos en Instagram</a>
         </p>
+      </div>
+    </section>
+
+    <!-- Merch: colección de Tattoo Music Fest en Alzada Streetwear (Shopify). Se llena sola con js/merch.js. -->
+    <section class="seccion merch" id="merch" aria-labelledby="titulo-merch">
+      <div class="contenedor">
+        <div class="merch-encabezado">
+          <h2 id="titulo-merch">Merch</h2>
+          <div class="merch-flechas" hidden>
+            <button type="button" class="merch-flecha" data-dir="-1" aria-label="Productos anteriores">←</button>
+            <button type="button" class="merch-flecha" data-dir="1" aria-label="Más productos">→</button>
+          </div>
+        </div>
+        <ul class="merch-lista" id="merch-lista" aria-live="polite"></ul>
+        <p><a class="boton boton-secundario" href="https://alzadastreetwear.com/collections/tattoo-music-fest-mx" target="_blank" rel="noopener">Ver tienda</a></p>
       </div>
     </section>
 
@@ -83,7 +100,7 @@
 
   <footer class="pie">
     <div class="contenedor">
-      <p>Contacto: <a href="mailto:booking@toplineragency.com">booking@toplineragency.com</a> · <a href="https://tmfmerch.com/" target="_blank" rel="noopener">Merch</a></p>
+      <p>Contacto: <a href="mailto:booking@toplineragency.com">booking@toplineragency.com</a> · <a href="https://alzadastreetwear.com/collections/tattoo-music-fest-mx" target="_blank" rel="noopener">Merch</a></p>
       <p>© 2027 <span translate="no">Tattoo Music Fest MX</span> · <a href="https://www.alzada.mx" target="_blank" rel="noopener">Alzada</a></p>
     </div>
   </footer>
