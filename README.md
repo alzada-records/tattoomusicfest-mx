@@ -4,7 +4,7 @@ Sitio web de Tattoo Music Fest MX (tattoomusicfest.mx), edición 2027. HTML y CS
 
 ## Hoy
 
-- `index.html`: página de "muy pronto" con el logo, "Edición 2027 · Guadalajara", merch (colección tattoo-music-fest-mx de Alzada Streetwear, con `js/merch.js`), redes y formulario para que avisemos (Mailchimp, misma audiencia que Ladrones y Alzada).
+- `index.html`: página de "muy pronto" con el logo, "Edición 2027 · Guadalajara", tira de redes, merch (colección tattoo-music-fest-mx de Alzada Streetwear, con `js/merch.js`), aftermovie 2025 de YouTube y formulario para que avisemos (Mailchimp, misma audiencia que Ladrones y Alzada).
 
 ## Lista de pendientes
 
