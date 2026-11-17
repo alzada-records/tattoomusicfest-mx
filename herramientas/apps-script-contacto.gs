@@ -9,6 +9,7 @@
 
 // Pestaña y columnas (en orden, después de Fecha, Nombre, Correo y Teléfono) de cada tipo.
 const TIPOS = {
+  aviso:       { hoja: "Avísame 2027",         campos: [] },
   boletos:     { hoja: "Boletos",              campos: ["ciudad", "boletos"] },
   concurso:    { hoja: "Concurso de tatuajes", campos: ["nombre_artistico", "estudio", "ciudad", "estilo", "portafolio"] },
   expo:        { hoja: "Stands de expo",       campos: ["negocio", "giro", "ciudad", "redes"] },

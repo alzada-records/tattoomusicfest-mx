@@ -1,8 +1,8 @@
 // Formulario de Contacto de Tattoo Music Fest: muestra las preguntas según el asunto.
-// - "Avísame cuando anuncien la edición 2027" inscribe el correo en Mailchimp
+// - Todo se guarda en la hoja "Tattoo Music Fest – Contacto" del Drive personal de Lorenzo
+//   (ver herramientas/apps-script-contacto.gs), una pestaña por asunto. No manda correos a nadie.
+// - "Avísame cuando anuncien la edición 2027" además inscribe el correo en Mailchimp
 //   (la misma lista de Ladrones y Alzada), para mandar el anuncio por correo.
-// - Los demás asuntos se guardan en la hoja "Tattoo Music Fest – Contacto" del Drive
-//   personal de Lorenzo (ver herramientas/apps-script-contacto.gs). No mandan correos a nadie.
 (() => {
   // URL de la aplicación web de Apps Script de la hoja.
   // Lista de Mailchimp (misma audiencia de los tres sitios).
@@ -82,12 +82,11 @@
     mensaje.textContent = "Enviando…";
 
     try {
-      if (tipo.value === "aviso") {
-        await inscribir();
-      } else {
-        // Apps Script no deja leer su respuesta desde otro sitio ("no-cors"); si no hay error de red, llegó.
-        await fetch(CONTACTO_URL, { method: "POST", mode: "no-cors", body: new URLSearchParams(new FormData(form)) });
-      }
+      // Todo se guarda en la hoja. Apps Script no deja leer su respuesta desde otro sitio
+      // ("no-cors"); si no hay error de red, llegó.
+      const hoja = fetch(CONTACTO_URL, { method: "POST", mode: "no-cors", body: new URLSearchParams(new FormData(form)) });
+      // El aviso además inscribe el correo en Mailchimp para mandar el anuncio.
+      await Promise.all(tipo.value === "aviso" ? [hoja, inscribir()] : [hoja]);
       gracias.querySelector("p").textContent = tipo.options[tipo.selectedIndex].dataset.gracias;
       form.hidden = true;
       gracias.hidden = false;
