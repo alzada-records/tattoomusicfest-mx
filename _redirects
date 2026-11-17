@@ -2,8 +2,7 @@
 https://tattoomusicfest.mx/*  https://www.tattoomusicfest.mx/:splat  301!
 
 # TEMPORAL mientras se anuncia la edición 2027: cualquier página vieja (de Wix)
-# o inexistente manda a la página de "Más información muy pronto".
-# 302 = temporal, para que Google no la tome como definitiva.
-# Los archivos que sí existen (imágenes, css, js) no se redirigen.
-# Quitar esta línea cuando estén las secciones de 2027.
-/*  /  302
+# o inexistente cae en 404.html, que manda en seguida a la portada
+# ("Más información muy pronto"). Netlify no acepta una regla "/*  /" porque
+# la portada también coincide con "/*". Cuando estén las secciones de 2027,
+# 404.html se cambia por una página de error normal.
