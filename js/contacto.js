@@ -8,7 +8,7 @@
   // Lista de Mailchimp (misma audiencia de los tres sitios).
   const MAILCHIMP_URL = "https://alzada.us19.list-manage.com/subscribe/post-json?u=32d94c0e4051438d818e68013&id=4bd0645e6c&f_id=00b59be3f0";
 
-  const CONTACTO_URL = "https://script.google.com/macros/s/AKfycbyR6ZErc4ilV9jYF7j-zZqSspImykP5K5wNri9neFR1oSv-JMIC__OtbKTbXYzJ24miBA/exec";
+  const CONTACTO_URL = "https://script.google.com/macros/s/AKfycby6gNB6qUa-q0pG6SIwJU-KmJkeE4dhyhfYgfAimcnNdh5arvYcLJoE56EpjKg8Mqxptw/exec";
 
   const form = document.getElementById("form-contacto");
   if (!form) return;
@@ -84,7 +84,9 @@
     try {
       // Todo se guarda en la hoja. Apps Script no deja leer su respuesta desde otro sitio
       // ("no-cors"); si no hay error de red, llegó.
-      const hoja = fetch(CONTACTO_URL, { method: "POST", mode: "no-cors", body: new URLSearchParams(new FormData(form)) });
+      const datos = new URLSearchParams(new FormData(form));
+      if (!telefono.value.trim()) datos.delete("pais"); // sin teléfono, que no quede solo la lada
+      const hoja = fetch(CONTACTO_URL, { method: "POST", mode: "no-cors", body: datos });
       // El aviso además inscribe el correo en Mailchimp para mandar el anuncio.
       await Promise.all(tipo.value === "aviso" ? [hoja, inscribir()] : [hoja]);
       gracias.querySelector("p").textContent = tipo.options[tipo.selectedIndex].dataset.gracias;
