@@ -24,6 +24,7 @@
   <link rel="preconnect" href="https://www.youtube.com">
   <script src="/js/newsletter.js" defer></script>
   <script src="/js/merch.js" defer></script>
+  <script src="/js/contacto.js" defer></script>
 </head>
 <body>
   <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -84,6 +85,142 @@
       </div>
     </section>
 
+    <!-- Contacto: se guarda en la hoja "Tattoo Music Fest – Contacto" (Apps Script, ver herramientas/) -->
+    <section class="seccion" id="contacto" aria-labelledby="titulo-contacto">
+      <div class="contenedor contacto-grid">
+        <div>
+          <h2 id="titulo-contacto">Contacto</h2>
+          <p class="seccion-intro">¿Quieres boletos, participar en el concurso, poner un stand o patrocinar la edición 2027? Elige el asunto y te contactamos.</p>
+          <p>También puedes escribir a <a href="mailto:booking@toplineragency.com">booking@toplineragency.com</a>.</p>
+        </div>
+        <div>
+        <form id="form-contacto" class="form-contacto" method="post" novalidate>
+          <p class="trampa" aria-hidden="true"><label>No llenar <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <div>
+            <label for="c-nombre">Nombre *</label>
+            <input type="text" id="c-nombre" name="nombre" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="c-correo">Correo *</label>
+            <input type="email" id="c-correo" name="correo" autocomplete="email" spellcheck="false" required>
+          </div>
+          <div>
+            <label for="c-telefono">Teléfono *</label>
+            <div class="telefono">
+              <select id="c-pais" name="pais" aria-label="País del teléfono" autocomplete="tel-country-code"><option value="México +52" selected>🇲🇽 México +52</option><option value="Estados Unidos +1">🇺🇸 Estados Unidos +1</option><option value="Canadá +1">🇨🇦 Canadá +1</option><option value="Colombia +57">🇨🇴 Colombia +57</option><option value="Argentina +54">🇦🇷 Argentina +54</option><option value="Chile +56">🇨🇱 Chile +56</option><option value="Perú +51">🇵🇪 Perú +51</option><option value="Ecuador +593">🇪🇨 Ecuador +593</option><option value="Venezuela +58">🇻🇪 Venezuela +58</option><option value="Guatemala +502">🇬🇹 Guatemala +502</option><option value="El Salvador +503">🇸🇻 El Salvador +503</option><option value="Honduras +504">🇭🇳 Honduras +504</option><option value="Costa Rica +506">🇨🇷 Costa Rica +506</option><option value="Panamá +507">🇵🇦 Panamá +507</option><option value="República Dominicana +1">🇩🇴 República Dominicana +1</option><option value="Puerto Rico +1">🇵🇷 Puerto Rico +1</option><option value="España +34">🇪🇸 España +34</option><option value="Otro ">🌎 Otro </option></select>
+              <input type="tel" id="c-telefono" name="telefono" autocomplete="tel-national" inputmode="tel" required>
+            </div>
+          </div>
+          <div>
+            <label for="tipo">Asunto de interés *</label>
+            <select id="tipo" name="tipo" required><option value="">Elige una opción</option><option value="boletos" data-gracias="¡Gracias! Te avisamos en cuanto salgan los boletos de la edición 2027.">Boletos para TMF 2027</option><option value="concurso" data-gracias="¡Gracias! Recibimos tu registro para el concurso. Te contactaremos con las bases y categorías de la edición 2027.">Concurso de tatuajes</option><option value="expo" data-gracias="¡Gracias! Recibimos tu solicitud de stand. Te contactaremos con medidas, precios y disponibilidad.">Stands de expo</option><option value="alimentos" data-gracias="¡Gracias! Recibimos tu solicitud. Te contactaremos con los requisitos y precios para alimentos y bebidas.">Alimentos y bebidas</option><option value="patrocinios" data-gracias="¡Gracias! Recibimos tu propuesta. Te contactaremos con las opciones de patrocinio de la edición 2027.">Marcas y patrocinios</option></select>
+          </div>
+          <fieldset class="campos-tipo" data-tipo="boletos" hidden disabled>
+            <legend>Boletos para TMF 2027</legend>
+            <div>
+              <label for="boletos-ciudad">¿Desde qué ciudad nos visitarías?</label>
+              <input type="text" id="boletos-ciudad" name="ciudad">
+            </div>
+            <div>
+              <label for="boletos-boletos">¿Cuántos boletos te interesan?</label>
+              <input type="number" id="boletos-boletos" name="boletos" min="1" inputmode="numeric">
+            </div>
+          </fieldset>
+          <fieldset class="campos-tipo" data-tipo="concurso" hidden disabled>
+            <legend>Concurso de tatuajes</legend>
+            <div>
+              <label for="concurso-nombre_artistico">Nombre artístico</label>
+              <input type="text" id="concurso-nombre_artistico" name="nombre_artistico">
+            </div>
+            <div>
+              <label for="concurso-estudio">Estudio donde tatúas</label>
+              <input type="text" id="concurso-estudio" name="estudio">
+            </div>
+            <div>
+              <label for="concurso-ciudad">Ciudad</label>
+              <input type="text" id="concurso-ciudad" name="ciudad">
+            </div>
+            <div>
+              <label for="concurso-estilo">Estilo principal (realismo, tradicional, blackwork…)</label>
+              <input type="text" id="concurso-estilo" name="estilo">
+            </div>
+            <div>
+              <label for="concurso-portafolio">Instagram o link a tu portafolio</label>
+              <input type="text" id="concurso-portafolio" name="portafolio" spellcheck="false">
+            </div>
+          </fieldset>
+          <fieldset class="campos-tipo" data-tipo="expo" hidden disabled>
+            <legend>Stands de expo</legend>
+            <div>
+              <label for="expo-negocio">Nombre del negocio o marca</label>
+              <input type="text" id="expo-negocio" name="negocio">
+            </div>
+            <div>
+              <label for="expo-giro">Giro</label>
+              <select id="expo-giro" name="giro"><option value="">Elige una opción</option><option>Estudio de tatuaje</option><option>Insumos para tatuaje</option><option>Ropa y merch</option><option>Arte y accesorios</option><option>Otro</option></select>
+            </div>
+            <div>
+              <label for="expo-ciudad">Ciudad</label>
+              <input type="text" id="expo-ciudad" name="ciudad">
+            </div>
+            <div>
+              <label for="expo-redes">Instagram o sitio web</label>
+              <input type="text" id="expo-redes" name="redes" spellcheck="false">
+            </div>
+          </fieldset>
+          <fieldset class="campos-tipo" data-tipo="alimentos" hidden disabled>
+            <legend>Alimentos y bebidas</legend>
+            <div>
+              <label for="alimentos-negocio">Nombre del negocio</label>
+              <input type="text" id="alimentos-negocio" name="negocio">
+            </div>
+            <div>
+              <label for="alimentos-tipo_comida">¿Qué vendes? (tacos, hamburguesas, cerveza…)</label>
+              <input type="text" id="alimentos-tipo_comida" name="tipo_comida">
+            </div>
+            <div>
+              <label for="alimentos-necesita_luz">¿Necesitas conexión eléctrica?</label>
+              <select id="alimentos-necesita_luz" name="necesita_luz"><option value="">Elige una opción</option><option>Sí</option><option>No</option><option>No sé</option></select>
+            </div>
+            <div>
+              <label for="alimentos-redes">Instagram o sitio web</label>
+              <input type="text" id="alimentos-redes" name="redes" spellcheck="false">
+            </div>
+          </fieldset>
+          <fieldset class="campos-tipo" data-tipo="patrocinios" hidden disabled>
+            <legend>Marcas y patrocinios</legend>
+            <div>
+              <label for="patrocinios-empresa">Marca o empresa</label>
+              <input type="text" id="patrocinios-empresa" name="empresa">
+            </div>
+            <div>
+              <label for="patrocinios-cargo">Tu cargo</label>
+              <input type="text" id="patrocinios-cargo" name="cargo">
+            </div>
+            <div>
+              <label for="patrocinios-sitio_web">Sitio web</label>
+              <input type="url" id="patrocinios-sitio_web" name="sitio_web" spellcheck="false">
+            </div>
+            <div>
+              <label for="patrocinios-tipo_colaboracion">Tipo de colaboración</label>
+              <select id="patrocinios-tipo_colaboracion" name="tipo_colaboracion"><option value="">Elige una opción</option><option>Patrocinio</option><option>Activación de marca</option><option>Producto oficial</option><option>Medios</option><option>Otro</option></select>
+            </div>
+          </fieldset>
+          <div>
+            <label for="c-mensaje">Comentarios</label>
+            <textarea id="c-mensaje" name="mensaje" rows="4"></textarea>
+          </div>
+          <button class="boton" type="submit">Enviar</button>
+          <p class="form-mensaje" role="status" aria-live="polite"></p>
+        </form>
+        <div class="contacto-gracias" id="contacto-gracias" tabindex="-1" hidden>
+          <h2>¡Listo!</h2>
+          <p></p>
+        </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Newsletter: Mailchimp (misma audiencia que Ladrones y Alzada) -->
     <section class="seccion newsletter" id="lista" aria-labelledby="titulo-newsletter">
       <div class="contenedor">
@@ -115,7 +252,7 @@
 
   <footer class="pie">
     <div class="contenedor">
-      <p>Contacto: <a href="mailto:booking@toplineragency.com">booking@toplineragency.com</a> · <a href="https://alzadastreetwear.com/collections/tattoo-music-fest-mx" target="_blank" rel="noopener">Merch</a></p>
+      <p><a href="#contacto">Contacto</a> · <a href="mailto:booking@toplineragency.com">booking@toplineragency.com</a> · <a href="https://alzadastreetwear.com/collections/tattoo-music-fest-mx" target="_blank" rel="noopener">Merch</a></p>
       <p>© 2027 <span translate="no">Tattoo Music Fest MX</span> · <a href="https://www.alzada.mx" target="_blank" rel="noopener">Alzada</a></p>
     </div>
   </footer>
