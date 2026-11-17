@@ -1222,3 +1222,18 @@ label {
   max-width: 480px;
   margin-inline: auto;
 }
+
+/* Casilla dentro del formulario de contacto (aviso de la edición 2027) */
+.form-contacto .casilla input {
+  width: auto;
+  min-height: 0;
+  margin: 0.2rem 0 0;
+  padding: 0;
+  accent-color: var(--color-acento);
+}
+
+.form-contacto .casilla label {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-texto);
+}

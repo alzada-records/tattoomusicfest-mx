@@ -22,7 +22,6 @@
   <script src="/js/main.js" defer></script>
   <link rel="preconnect" href="https://alzadastreetwear.com">
   <link rel="preconnect" href="https://www.youtube.com">
-  <script src="/js/newsletter.js" defer></script>
   <script src="/js/merch.js" defer></script>
   <script src="/js/contacto.js" defer></script>
 </head>
@@ -39,8 +38,8 @@
         <h1 id="titulo-hero">Más información muy pronto</h1>
         <p class="seccion-intro">Tatuaje, música en vivo, skate y graffiti. Suscríbete y sé de los primeros en enterarte de fechas, line-up y boletos.</p>
         <p class="tmf-botones">
-          <a class="boton" href="#lista">Avísame</a>
-          <a class="boton boton-secundario" href="https://instagram.com/tattoomusicfestmx" target="_blank" rel="noopener">Síguenos en Instagram</a>
+          <a class="boton" href="#contacto" data-asunto="aviso">Inscríbete</a>
+          <a class="boton boton-secundario" href="https://instagram.com/tattoomusicfestmx" target="_blank" rel="noopener">Instagram</a>
         </p>
       </div>
     </section>
@@ -90,7 +89,7 @@
       <div class="contenedor contacto-grid">
         <div>
           <h2 id="titulo-contacto">Contacto</h2>
-          <p class="seccion-intro">¿Quieres boletos, participar en el concurso, poner un stand o patrocinar la edición 2027? Elige el asunto y te contactamos.</p>
+          <p class="seccion-intro">Inscríbete para que te avisemos cuando anunciemos la edición 2027, o elige el asunto si quieres boletos, participar en el concurso, poner un stand o patrocinar.</p>
           <p>También puedes escribir a <a href="mailto:booking@toplineragency.com">booking@toplineragency.com</a>.</p>
         </div>
         <div>
@@ -105,7 +104,7 @@
             <input type="email" id="c-correo" name="correo" autocomplete="email" spellcheck="false" required>
           </div>
           <div>
-            <label for="c-telefono">Teléfono *</label>
+            <label for="c-telefono">Teléfono <span class="obligatorio">*</span></label>
             <div class="telefono">
               <select id="c-pais" name="pais" aria-label="País del teléfono" autocomplete="tel-country-code"><option value="México +52" selected>🇲🇽 México +52</option><option value="Estados Unidos +1">🇺🇸 Estados Unidos +1</option><option value="Canadá +1">🇨🇦 Canadá +1</option><option value="Colombia +57">🇨🇴 Colombia +57</option><option value="Argentina +54">🇦🇷 Argentina +54</option><option value="Chile +56">🇨🇱 Chile +56</option><option value="Perú +51">🇵🇪 Perú +51</option><option value="Ecuador +593">🇪🇨 Ecuador +593</option><option value="Venezuela +58">🇻🇪 Venezuela +58</option><option value="Guatemala +502">🇬🇹 Guatemala +502</option><option value="El Salvador +503">🇸🇻 El Salvador +503</option><option value="Honduras +504">🇭🇳 Honduras +504</option><option value="Costa Rica +506">🇨🇷 Costa Rica +506</option><option value="Panamá +507">🇵🇦 Panamá +507</option><option value="República Dominicana +1">🇩🇴 República Dominicana +1</option><option value="Puerto Rico +1">🇵🇷 Puerto Rico +1</option><option value="España +34">🇪🇸 España +34</option><option value="Otro ">🌎 Otro </option></select>
               <input type="tel" id="c-telefono" name="telefono" autocomplete="tel-national" inputmode="tel" required>
@@ -113,8 +112,15 @@
           </div>
           <div>
             <label for="tipo">Asunto de interés *</label>
-            <select id="tipo" name="tipo" required><option value="">Elige una opción</option><option value="boletos" data-gracias="¡Gracias! Te avisamos en cuanto salgan los boletos de la edición 2027.">Boletos para TMF 2027</option><option value="concurso" data-gracias="¡Gracias! Recibimos tu registro para el concurso. Te contactaremos con las bases y categorías de la edición 2027.">Concurso de tatuajes</option><option value="expo" data-gracias="¡Gracias! Recibimos tu solicitud de stand. Te contactaremos con medidas, precios y disponibilidad.">Stands de expo</option><option value="alimentos" data-gracias="¡Gracias! Recibimos tu solicitud. Te contactaremos con los requisitos y precios para alimentos y bebidas.">Alimentos y bebidas</option><option value="patrocinios" data-gracias="¡Gracias! Recibimos tu propuesta. Te contactaremos con las opciones de patrocinio de la edición 2027.">Marcas y patrocinios</option></select>
+            <select id="tipo" name="tipo" required><option value="">Elige una opción</option><option value="aviso" data-gracias="¡Listo! Revisa tu correo para confirmar tu suscripción y te avisamos en cuanto anunciemos la edición 2027.">Avísame cuando anuncien la edición 2027</option><option value="boletos" data-gracias="¡Gracias! Te avisamos en cuanto salgan los boletos de la edición 2027.">Boletos para TMF 2027</option><option value="concurso" data-gracias="¡Gracias! Recibimos tu registro para el concurso. Te contactaremos con las bases y categorías de la edición 2027.">Concurso de tatuajes</option><option value="expo" data-gracias="¡Gracias! Recibimos tu solicitud de stand. Te contactaremos con medidas, precios y disponibilidad.">Stands de expo</option><option value="alimentos" data-gracias="¡Gracias! Recibimos tu solicitud. Te contactaremos con los requisitos y precios para alimentos y bebidas.">Alimentos y bebidas</option><option value="patrocinios" data-gracias="¡Gracias! Recibimos tu propuesta. Te contactaremos con las opciones de patrocinio de la edición 2027.">Marcas y patrocinios</option></select>
           </div>
+          <fieldset class="campos-tipo" data-tipo="aviso" hidden disabled>
+            <legend>Avísame cuando anuncien la edición 2027</legend>
+            <div class="casilla">
+              <input type="checkbox" id="aviso-acepto" name="acepto" required>
+              <label for="aviso-acepto">Quiero recibir noticias de <span translate="no">Tattoo Music Fest MX</span> por correo.</label>
+            </div>
+          </fieldset>
           <fieldset class="campos-tipo" data-tipo="boletos" hidden disabled>
             <legend>Boletos para TMF 2027</legend>
             <div>
@@ -217,33 +223,6 @@
           <h2>¡Listo!</h2>
           <p></p>
         </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Newsletter: Mailchimp (misma audiencia que Ladrones y Alzada) -->
-    <section class="seccion newsletter" id="lista" aria-labelledby="titulo-newsletter">
-      <div class="contenedor">
-        <div class="newsletter-caja">
-        <h2 id="titulo-newsletter">Avísame</h2>
-        <p class="seccion-intro">Te mandamos un correo en cuanto anunciemos la edición 2027.</p>
-        <form class="form-lista" action="https://alzada.us19.list-manage.com/subscribe/post?u=32d94c0e4051438d818e68013&amp;id=4bd0645e6c&amp;f_id=00b59be3f0" method="post" target="_blank" rel="noopener" novalidate>
-          <div>
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="FNAME" autocomplete="given-name" required>
-          </div>
-          <div>
-            <label for="correo">Correo</label>
-            <input type="email" id="correo" name="EMAIL" autocomplete="email" spellcheck="false" required>
-          </div>
-          <div class="casilla">
-            <input type="checkbox" id="acepto" name="acepto" required>
-            <label for="acepto">Quiero recibir noticias de <span translate="no">Tattoo Music Fest MX</span>.</label>
-          </div>
-          <div class="trampa" aria-hidden="true"><input type="text" name="b_32d94c0e4051438d818e68013_4bd0645e6c" tabindex="-1" value="" autocomplete="off"></div>
-          <button class="boton" type="submit">Suscribirme</button>
-          <p class="form-mensaje" role="status" aria-live="polite"></p>
-        </form>
         </div>
       </div>
     </section>
