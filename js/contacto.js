@@ -3,7 +3,7 @@
 // (ver herramientas/apps-script-contacto.gs). No manda correos a nadie.
 (() => {
   // URL de la aplicación web de Apps Script de la hoja.
-  const CONTACTO_URL = "";
+  const CONTACTO_URL = "https://script.google.com/macros/s/AKfycbyR6ZErc4ilV9jYF7j-zZqSspImykP5K5wNri9neFR1oSv-JMIC__OtbKTbXYzJ24miBA/exec";
 
   const form = document.getElementById("form-contacto");
   if (!form) return;
