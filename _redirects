@@ -1,0 +1,9 @@
+# Siempre en www (igual que Alzada)
+https://tattoomusicfest.mx/*  https://www.tattoomusicfest.mx/:splat  301!
+
+# TEMPORAL mientras se anuncia la edición 2027: cualquier página vieja (de Wix)
+# o inexistente manda a la página de "Más información muy pronto".
+# 302 = temporal, para que Google no la tome como definitiva.
+# Los archivos que sí existen (imágenes, css, js) no se redirigen.
+# Quitar esta línea cuando estén las secciones de 2027.
+/*  /  302
